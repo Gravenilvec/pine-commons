@@ -1,0 +1,19 @@
+group 'xyz.anana'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    maven {
+        url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+}
+
+dependencies {
+    compile 'org.spigotmc:spigot-api:1.9.4-R0.1-SNAPSHOT'
+    compile 'org.bukkit:craftbukkit:1.9.4-R0.1-SNAPSHOT'
+    compile 'org.projectlombok:lombok:1.16.16'
+}

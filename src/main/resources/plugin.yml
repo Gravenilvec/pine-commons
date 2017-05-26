@@ -1,0 +1,5 @@
+main: xyz.anana.pinecommons.PineCommons
+name: pine-commons
+version: 1.0
+author: Anana
+description: pine-commons is an API in Minecraft who allows to simplify the development of plugins.
