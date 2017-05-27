@@ -8,8 +8,8 @@ import java.lang.annotation.Target;
 /**
  * @author <a href="mailto:contact@anana.xyz">Anana</a>
  */
-@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
 public @interface Command {
 
     /**
@@ -17,7 +17,7 @@ public @interface Command {
      *
      * @return The label command.
      */
-    String label();
+    String commandLabel();
 
     /**
      * Set the minimum number of arguments to execute the content of the command.
