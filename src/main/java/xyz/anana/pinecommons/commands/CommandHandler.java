@@ -27,12 +27,12 @@ import java.util.logging.Level;
 /**
  * @author <a href="mailto:contact@anana.xyz">Anana</a>
  */
-public class CommandBase implements Listener {
+public class CommandHandler implements Listener {
 
     private PineCommons pineCommons;
     private List<Method> commands;
 
-    public CommandBase(PineCommons pineCommons) {
+    public CommandHandler(PineCommons pineCommons) {
         this.pineCommons = pineCommons;
         this.commands = new ArrayList<>();
     }
@@ -113,6 +113,9 @@ public class CommandBase implements Listener {
 
             String entryLabel = e.getMessage().split(" ")[0].replace("/", "");
             String[] entryArgs = e.getMessage().replace(entryLabel, "").split(" ");
+
+            if (entryArgs.length < commandAnnotation.minimumArgs())
+                return;
 
             if (entryLabel.equals(commandAnnotation.label()))
                 try {

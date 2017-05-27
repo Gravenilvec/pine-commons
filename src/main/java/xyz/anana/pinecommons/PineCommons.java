@@ -6,7 +6,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.anana.pinecommons.commands.Command;
-import xyz.anana.pinecommons.commands.CommandBase;
+import xyz.anana.pinecommons.commands.CommandHandler;
+import xyz.anana.pinecommons.inventory.InventoryListener;
 
 import java.util.logging.Logger;
 
@@ -18,13 +19,13 @@ public class PineCommons extends JavaPlugin {
     @Getter
     private static Logger pineLogger = Logger.getLogger("PineCommons");
     @Getter
-    private static CommandBase commandBase;
+    private static CommandHandler commandHandler;
 
     @Override
     public void onEnable() {
-        commandBase = new CommandBase(this);
-        commandBase.registerCommand(this);
-        register(commandBase);
+        commandHandler = new CommandHandler(this);
+        commandHandler.registerCommand(this);
+        register(commandHandler, new InventoryListener());
     }
 
     /**
